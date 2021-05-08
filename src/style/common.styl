@@ -1,0 +1,237 @@
+@import 'lib.styl'
+@import 'config.styl'
+
+// Base
+html
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  min-width:1200px;
+  font-size: 14px;
+  font-family: "Microsoft YaHei UI";
+  overflow:hidden;
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td, section, header, footer
+  margin: 0
+  padding: 0
+
+body
+  width: 100%
+  height: 100%;
+  color: #333
+  -webkit-overflow-scrolling: touch;
+  &.env-desktop
+    font-size: 16px
+
+fieldset, img, iframe
+  border: 0
+
+abbr, acronym
+  border: 0
+  font-variant: normal
+
+:focus
+  outline: 0
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: normal
+  font-size: 100%
+
+blockquote, q
+  quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+  content: ''
+  content: none
+
+// ::-webkit-input-placeholder
+textarea, input
+  resize: none
+  border: none;
+  -webkit-appearance: none
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number]
+  -moz-appearance: textfield
+
+ul, ol
+  list-style: none
+
+li
+  display: block
+
+a, a:hover, a:active, a:link, a:visited
+  color: inherit
+  text-decoration: none
+
+img
+  display:block;
+  width:100%;
+
+.html
+  ul, ol
+    list-style: disc inside !important
+    margin: 1.12em 0
+    margin-left: 2.5em
+  ol
+    list-style-type: decimal !important
+  li
+    display: list-item
+
+// Common **************************************************************
+.hide
+  display: none !important
+
+.unvisible
+  visibility: hidden !important
+
+.ellipsis
+  ellipsis: 1
+
+.flex
+  display:flex;
+  align-items:center;
+
+.hflexbox
+  flexbox: horizontal
+
+.vflexbox
+  flexbox: vertical
+
+.space
+  box-flex: 1
+
+.fixed
+  position: fixed
+  z-index: 1000
+.white
+  color:#fff !important
+.opacity-5
+  opacity: 0.5;
+.scrim
+  @extend .fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background-color: rgba(0,0,0,0.5)
+
+.spotlight-mask
+  position: absolute
+  z-index: 1000
+
+.scrollable
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+
+.highlight
+  background-color: rgba(0,0,0,0.1) !important
+  user-select: none
+
+.fl
+  float:left;
+
+.fr
+  float:right;
+
+.clear
+  display:block;
+  clear: both
+
+.blockcenter
+  display: block
+  text-align: center
+
+.textRight
+  text-align: right
+// common
+
+.marginTop
+  margin-top: 1em;
+
+@keyframes fly-up-out
+  0%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+  100%
+    opacity: 0
+    transform: translate3d(0, -2em, 0)
+
+em
+  color:#ff5a2c
+  font-style: normal;
+
+textarea,
+input[type='text'],
+input[type='number'],
+input[type='password']
+  border-radius:2px;
+  box-sizing: border-box;
+  border:1px solid #dfdfdf;
+
+input:focus,textarea:focus
+  color:FONT_COLOR;
+  border-color:#e1cea6;
+  -webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;
+  -webkit-box-shadow:0 0 3px #e1cea6;
+  -moz-box-shadow: 0 0 3px #e1cea6;
+  box-shadow:0 0 3px #e1cea6;
+
+input
+  &:-webkit-autofill
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+
+input
+  &::-webkit-input-placeholder
+    color: #e1cea6;
+  &::-moz-placeholder
+    color: #e1cea6;
+  &::-moz-placeholder
+    color: #e1cea6;
+  &::-ms-input-placeholder
+    color: #e1cea6;
+video
+  &::-webkit-media-controls-enclosure
+    overflow:hidden;
+  &::-webkit-media-controls-panel
+    width: calc(100% + 30px);
+
+.mb20
+  margin-bottom:20px;
+.mb40
+  margin-bottom:40px;
+.pointer
+  cursor:pointer;
+.error
+  font-size: 12px;
+  color: ERROR_COLOR;
+
+.common-toast
+  position: fixed;
+  bottom: 40%;
+  left: 0;
+  z-index:9999;
+  width: 100%;
+  min-height: 0px;
+  text-align:center;
+  opacity: .9;
+  font-size: 16px;
+  transition: opacity 0.5s ease-out;
+  .toast
+    margin: 0 auto;
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #dfdfdf;
+.common-toast-hide
+  display:none;
